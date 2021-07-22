@@ -1,0 +1,44 @@
+.avatar {
+    grid-area: ava;
+    width: 100%;
+}
+
+.avatar img {
+    width: 70%;
+    border-radius: 8vh;
+}
+
+.dialog:hover {
+    background-color:rgb(200, 230, 255);
+}
+
+.active .dialog {
+    background-color: rgb(138, 197, 246);
+}
+
+
+.dialogBlock {
+    grid-area: block;
+}
+
+
+
+
+.dialog {
+    padding: 10px;
+    width: 300px;
+    display: grid;
+    grid-template-areas: "ava block";
+    grid-template-columns: 4fr 14fr;
+}
+
+.dialog .active {
+    background-color:bisque;
+}
+
+
+
+.active .name{
+    font-weight: bold;
+}
+

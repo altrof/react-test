@@ -1,0 +1,20 @@
+.myMsg {
+    color: blue;
+    text-align: right;
+    margin: 15px;
+    padding: 15px 15px 15px 15px;
+    background-color:rgb(200, 230, 255);
+    width: 30%;
+    margin-left: auto;
+    border-radius: 5px;
+    
+}
+
+.notMyMsg {
+    color: red;
+    width: 30%;
+    margin: 15px;
+    padding: 15px 15px 15px 15px;
+    background-color:rgb(214, 236, 253);
+    border-radius: 5px;
+}

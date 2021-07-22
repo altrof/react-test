@@ -1,0 +1,41 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.messages {
+    padding: 10px 20px 10px 20px;
+    margin: 5px 10px 5px 10px;
+}
+
+.dialogs a {
+    text-decoration: none;
+    color: black;
+}
+
+.dialogsItems {
+    border-right: 1px solid black;
+}
+
+.sendMsg textarea {
+    margin-right: 5px;
+    border-radius: 5px;
+    height:5vh;
+    resize: none;
+    grid-area: text;
+    background-color: rgb(234, 245, 255);
+}
+
+.sendMsg button {
+    border-radius: 5px;
+    border: 1px solid rgb(179, 123, 11);
+    grid-area: btn;
+    background-color:rgb(255, 251, 243);
+}
+
+.sendMsg {
+    margin: 5px;
+    display: grid;
+    grid-template-areas: "text btn";
+    grid-template-columns: 6fr 2fr;
+}

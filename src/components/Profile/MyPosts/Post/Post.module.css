@@ -1,0 +1,12 @@
+.post {
+    border: 1px solid black;
+    width: 90%;
+    padding: 7px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.post img {
+    width: 50px!important;
+    height: 50px;
+    border-radius: 50px;
+}

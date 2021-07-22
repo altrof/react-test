@@ -1,0 +1,26 @@
+.header {
+    width: 100%;
+    grid-area: header;
+    background-color:rgb(89, 98, 107);
+  }
+  
+.logo {
+    color: white;
+    width: 55px;
+    border: 1px solid whitesmoke;
+    border-radius: 7px;
+    font-size: 25px;
+    padding: 15px 0px 0px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-family: monospace, "Liberation Mono";
+}
+
+.loginBlock {
+  float: right;
+}
+
+.loginBlock a {
+  color: white;
+}
