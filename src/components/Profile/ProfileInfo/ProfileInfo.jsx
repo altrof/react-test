@@ -2,6 +2,7 @@ import Preloarder from '../../common/Preloarder/Preloarder';
 import classes from './ProfileInfo.module.css'
 import userPhoto from '../../../assets/images/user.png'
 import ProfileStatus from './ProfileStatus.jsx'
+import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 
 const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -13,7 +14,7 @@ const ProfileInfo = (props) => {
       </div> */}
       <div className={classes.description}>
         <img src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto} className={classes.userPhoto} />
-        <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
+        <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
       </div>
     </div>
   )

@@ -1,0 +1,30 @@
+
+.pages {
+    cursor: pointer, progress;
+    padding: 10px;
+}
+
+.page {
+    display: inline-flex;
+    margin: 5px;
+    border: 1px solid #000;
+    padding: 3px;
+    background-color:rgb(255, 255, 255)
+}
+.page:hover {
+    background-color:rgb(219, 219, 219)
+}
+
+.paginator {
+    margin: 10px;
+}
+
+.pageNumber {
+    padding: 3px;
+}
+
+.pageNumber.selectedPage {
+    font-size: 20px;
+    font-weight: bold;
+    border-color: black;
+}

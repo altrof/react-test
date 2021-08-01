@@ -3,10 +3,10 @@
     height: 100px;
 }
 
-.selectedPage {
-    font-weight: bold;
-}
-
-.pages {
-    cursor: pointer, progress;
+.user {
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 10px;
+    padding: 8px;
+    background-color: rgb(248, 247, 247);
 }
