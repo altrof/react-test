@@ -4,19 +4,21 @@ import React from 'react'
 import { Field, reduxForm } from 'redux-form';
 import { maxLengthCreator, required } from "../../../utils/validators/validators";
 import { Textarea } from "../../common/FormsControls/FormsControls";
+import Preloarder from './../../common/Preloarder/Preloarder';
 
 const maxLength10 = maxLengthCreator(10)
 
 const MyPosts = React.memo(props => {
-  
-  let postsElements = props.posts.map(post => <Post post={post.message} likesCount={post.likesCount} />)
+  let postsElements = props.posts.map(post => <Post profile={props.profile} post={post.message} likesCount={post.likesCount} />)
 
   
   let onAddNewPost = (values) => {
     props.addPost(values.newPostBody);
   }
 
-
+  if (!props.profile) {
+    return false
+  } 
   return (
     <div className={classes.postBlock}> 
       <h3>My posts</h3>

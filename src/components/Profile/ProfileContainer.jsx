@@ -1,12 +1,12 @@
 import React from 'react';
 import Profile from './Profile';
 import { connect } from 'react-redux';
-import { getUserProfile, getStatus, updateStatus } from '../../redux/profile-reducer';
+import { getUserProfile, getStatus, updateStatus, savePhoto, saveProfile } from '../../redux/profile-reducer';
 import {  withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 
 class ProfileContainer extends React.Component{
-    componentDidMount() {
+    refreshProfile() {
         let userId = this.props.match.params.userId;
         if(!userId) {
             userId = this.props.authorizedUserId
@@ -16,16 +16,26 @@ class ProfileContainer extends React.Component{
         } 
         this.props.getUserProfile(userId)
         this.props.getStatus(userId)
-        
     }
+
+    componentDidMount() {
+        this.refreshProfile()
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(this.props.match.params.userId != prevProps.match.params.userId){
+            this.refreshProfile()
+        }
+    }
+
     render() {
-            console.log(this.props.fake, "REDNDER PROFILE COMPONENT");
         return (
             <div>
               <Profile {...this.props} profile={this.props.profile} 
                                         status={this.props.status} 
                                         updateStatus={this.props.updateStatus}
-                                        fake={this.props.fake} />
+                                        isOwner={!this.props.match.params.userId}
+                                        savePhoto={this.props.savePhoto} />
             </div>
           )
     }
@@ -35,7 +45,6 @@ class ProfileContainer extends React.Component{
 // returnit object => ({telo object})
 // func => {instrukcija funkcii}
 let mapStateToProps = (state) => {
-    console.log( state.fake, "MAP STATE TO PROPS");
     return ({
     profile: state.profilePage.profile,
     status: state.profilePage.status,
@@ -50,7 +59,7 @@ let mapStateToProps = (state) => {
 
 
 export default compose(
-        connect(mapStateToProps, {getUserProfile, getStatus, updateStatus }), 
+        connect(mapStateToProps, {getUserProfile, getStatus, updateStatus, savePhoto, saveProfile }), 
         withRouter, 
         // withAuthRedirect
         )

@@ -1,6 +1,6 @@
 import styles from "./FormsControls.module.css"
 
-const FormControl = ({input, meta, child, element, ...props}) => {
+export const FormControl = ({input, meta, child, element, ...props}) => {
     const hasError = meta.touched && meta.error
     return (
         <div className={styles.formControl + " " + (hasError ? styles.error : "")}>
@@ -14,11 +14,13 @@ const FormControl = ({input, meta, child, element, ...props}) => {
 
 
 export const Textarea = (props) => {
-    return <FormControl {...props} element={"textarea"}></FormControl>
+    const {input, meta, child, ...restProps} = props
+    return <FormControl {...props}><textarea {...input} {...restProps}/></FormControl>
 }
 
 export const Input = (props) => {
-    return <FormControl {...props} element={"input"}><input {...props} /></FormControl>
+    const {input, meta, child, ...restProps} = props
+    return <FormControl {...props}><input {...input} {...restProps} /></FormControl>
 }
 
 /* export const Input = ({input, meta , ...props}) => {

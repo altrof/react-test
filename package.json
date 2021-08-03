@@ -2,7 +2,7 @@
   "name": "react-first",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://altrof.github.io/test-ghpages",
+  "homepage": "https://altrof.github.io/socialnetwork",
   "dependencies": {
     "@material-ui/core": "^4.12.2",
     "@testing-library/jest-dom": "^5.12.0",
