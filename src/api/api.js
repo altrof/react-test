@@ -4,8 +4,8 @@ const instance = axios.create({
     baseURL: "https://social-network.samuraijs.com/api/1.0/",
     withCredentials: true,
     headers: {
-        // WARNING! GITHUB
-        'API-KEY': '5e361b55-2e8e-49f8-8691-931708c4a496'
+        // WARNING! FOR GITHUB NEED TO REMOVE
+        'API-KEY': ''
     }
 });
 

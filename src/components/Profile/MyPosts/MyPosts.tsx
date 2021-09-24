@@ -4,11 +4,19 @@ import React from 'react'
 import { Field, reduxForm } from 'redux-form';
 import { maxLengthCreator, required } from "../../../utils/validators/validators";
 import { Textarea } from "../../common/FormsControls/FormsControls";
-import Preloarder from './../../common/Preloarder/Preloarder';
+import Preloarder from '../../common/Preloarder/Preloarder';
+import { PostType } from "../../types/types";
 
 const maxLength10 = maxLengthCreator(10)
 
-const MyPosts = React.memo(props => {
+type PropsType = {
+  posts: PostType
+}
+type StateType = {
+  
+}
+
+const MyPosts: PropsType = React.memo(props => {
   let postsElements = props.posts.map(post => <Post profile={props.profile} post={post.message} likesCount={post.likesCount} />)
 
   

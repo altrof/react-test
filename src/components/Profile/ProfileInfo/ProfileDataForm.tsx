@@ -1,6 +1,6 @@
 import {FormControl} from '../../common/FormsControls/FormsControls';
 import { Field, reduxForm } from 'redux-form';
-import { Input, Textarea } from './../../common/FormsControls/FormsControls';
+import { Input, Textarea } from '../../common/FormsControls/FormsControls';
 import styles from './../../common/FormsControls/FormsControls.module.css';
 import style from './ProfileInfo.module.css'
 

@@ -1,4 +1,4 @@
-import { Route, withRouter, BrowserRouter, HashRouter, Switch } from 'react-router-dom';
+import { Route, withRouter, BrowserRouter, Switch } from 'react-router-dom';
 import './App.css';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Navbar from './components/Navbar/Navbar';
@@ -8,11 +8,9 @@ import Settings from './components/Settings/Settings'
 import Login from './components/Login/Login';
 import React from 'react'
 import { connect, Provider } from 'react-redux';
-import { initializeApp } from './redux/app-reducer';
+import { initializeApp } from './redux/app-reducer.ts';
 import { compose } from 'redux';
-import Preloarder from './components/common/Preloarder/Preloarder';
 import store from './redux/redux-store'
-import { Suspense } from 'react';
 import { withSuspense } from './hoc/withSuspense';
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'))
@@ -24,7 +22,7 @@ const UsersContainer = React.lazy(() => import('./components/Users/UsersContaine
 
 class App extends React.Component {
   catchAllUnhadleError = (reason, promise) => {
-    alert("Some error occured")
+    //alert("Some error occured")
     //console.error(PromiseRejectionEvent)
   }
   componentDidMount() {
